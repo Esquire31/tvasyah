@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TIMELINE_EVENTS } from '../constants';
+import { TIMELINE_EVENTS } from '../../../../constants';
 
 const Timeline: React.FC = () => {
   return (

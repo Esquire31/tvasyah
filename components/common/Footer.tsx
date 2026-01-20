@@ -15,12 +15,12 @@ const Footer: React.FC = () => {
           </div>
           <form className="max-w-xl mx-auto flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
             <input 
-              className="flex-1 bg-transparent border-b border-white/30 focus:border-primary px-0 py-4 text-white placeholder:text-white/40 focus:ring-0 transition-colors" 
+              className="flex-1 bg-transparent border-b border-white/30 focus:border-primary px-4 py-4 text-white placeholder:text-white/40 focus:ring-0 transition-colors" 
               placeholder="Your email address" 
               type="email"
             />
             <button className="bg-primary text-emerald-deep px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
-              Join <span className="material-symbols-outlined !text-base">east</span>
+              Join <span className="material-symbols-outlined !text-base">Fast</span>
             </button>
           </form>
           <p className="text-white/40 text-[10px] uppercase tracking-widest">

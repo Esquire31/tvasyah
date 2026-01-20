@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../../../../constants';
 
 const Bestsellers: React.FC = () => {
   return (

@@ -1,17 +1,17 @@
 
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Marquee from './components/Marquee';
-import AlchemySection from './components/AlchemySection';
-import RitualSection from './components/RitualSection';
-import Bestsellers from './components/Bestsellers';
-import Testimonials from './components/Testimonials';
-import AboutHero from './components/AboutHero';
-import FounderLegacy from './components/FounderLegacy';
-import Timeline from './components/Timeline';
-import Promises from './components/Promises';
-import Footer from './components/Footer';
+import Header from './components/common/Header';
+import Hero from './components/pages/homepage/sections/Hero';
+import Marquee from './components/ui/Marquee';
+import AlchemySection from './components/pages/homepage/sections/AlchemySection';
+import RitualSection from './components/pages/homepage/sections/RitualSection';
+import Bestsellers from './components/pages/homepage/sections/Bestsellers';
+import Testimonials from './components/pages/homepage/sections/Testimonials';
+import AboutHero from './components/pages/about/sections/AboutHero';
+import FounderLegacy from './components/pages/about/sections/FounderLegacy';
+import Timeline from './components/pages/about/sections/Timeline';
+import Promises from './components/pages/about/sections/Promises';
+import Footer from './components/common/Footer';
 import { INGREDIENTS, PUBLICATIONS } from './constants';
 
 const App: React.FC = () => {

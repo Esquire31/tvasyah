@@ -1,9 +1,10 @@
-
 import React from 'react';
+import { COLOR, ICONS } from '../../core/constants';
+import { MoveRight, BadgeCheck, Leaf, Globe, Share2, Camera } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-emerald-deep text-white">
+    <footer className="bg-emerald-green text-white">
       <section className="relative py-32 px-6 lg:px-20 border-b border-white/10 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
           <div className="space-y-4">
@@ -21,8 +22,9 @@ const Footer: React.FC = () => {
             />
             <button className="bg-primary text-emerald-deep px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
               Join 
-              {/* Add Icon */}
-              <span className="material-symbols-outlined !text-base">Fast</span>
+              <span className="material-symbols-outlined !text-base">
+                <MoveRight color={COLOR.TEXT.BLACK} size={ICONS.SIZE.SM} />
+              </span>
             </button>
           </form>
           <p className="text-white/40 text-[10px] uppercase tracking-widest">
@@ -43,15 +45,13 @@ const Footer: React.FC = () => {
             <div className="flex gap-8">
               <div className="flex flex-col items-center gap-3">
                 <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
-                  {/* Add Icon */}
-                  <span className="material-symbols-outlined text-gold-muted text-2xl">verified</span>
+                  <BadgeCheck color={COLOR.TEXT.SUBTLE} size={ICONS.SIZE.LG} />
                 </div>
                 <span className="text-[9px] uppercase tracking-widest text-white/40 text-center">Certified<br/>Natural</span>
               </div>
               <div className="flex flex-col items-center gap-3">
                 <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
-                  {/* Add Icon */}
-                  <span className="material-symbols-outlined text-gold-muted text-2xl">eco</span>
+                  <Leaf color={COLOR.TEXT.SUBTLE} size={ICONS.SIZE.LG} />
                 </div>
                 <span className="text-[9px] uppercase tracking-widest text-white/40 text-center">Cruelty<br/>Free</span>
               </div>
@@ -94,16 +94,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex gap-6">
             <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined !text-lg">public</span>
+              <Globe color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
             </a>
             <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined !text-lg">share</span>
+              <Share2 color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
             </a>
             <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined !text-lg">photo_camera</span>
+              <Camera color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
             </a>
           </div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">

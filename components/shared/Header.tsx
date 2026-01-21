@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { NAV_ITEMS } from '../../constants';
-import { Search } from 'lucide-react';
+import { Search, CircleUser, ShoppingCart } from 'lucide-react';
+import { COLOR, ICONS } from '../../core/constants';
 
 interface HeaderProps {
   onNavigate: (view: string) => void;
@@ -13,17 +13,21 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 20;
+      console.log('[Header] scrollY:', window.scrollY, 'scrolled:', scrolled);
+      setIsScrolled(scrolled);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll(); // initialize on mount
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
-        ? 'bg-cream-soft/95 dark:bg-background-dark/95 py-3 shadow-sm' 
-        : 'bg-cream-soft/40 dark:bg-background-dark/80 py-4'
+        ? 'bg-cream-soft/75 dark:bg-background-dark/75 py-3 shadow-sm' 
+        : 'bg-cream-soft/90 dark:bg-background-dark/90 py-4'
     } backdrop-blur-md border-b border-sage/10 px-6 lg:px-20`}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <div className="flex items-center gap-12">
@@ -51,21 +55,18 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
           </nav>
         </div>
         <div className="flex items-center gap-6">
-          <div className="hidden sm:flex items-center bg-background-light dark:bg-gray-800 rounded-full px-4 py-1.5 border border-sage/10">
-            {/* Add Icon */}
+          <div className="hidden sm:flex items-center bg-background-light dark:bg-gray-800 rounded-full px-4 py-1.5 border border-sage-90">
             <span className="material-symbols-outlined text-sage text-sm">
-              <Search  />
+              <Search className="text-sage" size={ICONS.SIZE.SM} />
             </span>
             <input className="bg-transparent border-none focus:ring-0 text-xs w-32 placeholder-sage/50 dark:text-white" placeholder="Search..." type="text"/>
           </div>
           <div className="flex gap-4">
-            <button className="text-sage hover:text-primary transition-colors">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined">person</span>
+            <button className="transition-all duration-200 group">
+              <CircleUser className="text-sage transition-colors group-hover:text-uranium-green" size={ICONS.SIZE.MD} />
             </button>
-            <button className="text-sage hover:text-primary transition-colors relative">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined">shopping_bag</span>
+            <button className="relative transition-all duration-200 group">
+              <ShoppingCart className="text-sage transition-colors group-hover:text-uranium-green" size={ICONS.SIZE.MD} />
               <span className="absolute -top-1 -right-1 bg-primary text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
             </button>
           </div>

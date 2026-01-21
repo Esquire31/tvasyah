@@ -1,0 +1,71 @@
+@use "sass:math";
+@use "sass:map";
+
+$URANIUM_GREEN: #17cfa1;
+
+$TERRACOTTA_GOLD: #c7a17a;
+
+$SAGE: #7c9082;
+
+$GOLD_MUTED: #c5a059;
+
+$EMERALD_GREEN: #08211b;
+
+$COLOR-PALETTES: (
+  "uranium-green": $URANIUM_GREEN,
+  "terracotta-gold": $TERRACOTTA_GOLD,
+  "sage": $SAGE,
+  "gold-muted": $GOLD_MUTED,
+  "emerald-green": $EMERALD_GREEN
+);
+
+// Generate shades with varying opacity for each base color
+$shades: ();
+@each $name, $base-color in $COLOR-PALETTES {
+  @for $i from 1 through 9 {
+    $alpha: math.div($i, 10);
+    $shade-color: rgba($base-color, $alpha);
+    $shade-name: "#{$name}-#{$i}0";
+    $shades: map.merge($shades, ($shade-name: $shade-color));
+  }
+}
+
+// Base Color Utilities (100% opacity)
+@each $name, $base-color in $COLOR-PALETTES {
+  .bg-#{$name} {
+    background-color: $base-color !important;
+  }
+  .border-#{$name} {
+    border-color: $base-color !important;
+  }
+  .text-#{$name} {
+    color: $base-color !important;
+  }
+  .hover\:text-#{$name}:hover {
+    color: $base-color !important;
+  }
+  .group:hover .group-hover\:text-#{$name} {
+    color: $base-color !important;
+  }
+}
+
+// Background Color Utilities
+@each $shade-name, $shade-color in $shades {
+  .bg-#{$shade-name} {
+    background-color: $shade-color !important;
+  }
+}
+
+// Border Color Utilities
+@each $shade-name, $shade-color in $shades {
+  .border-#{$shade-name} {
+    border-color: $shade-color !important;
+  }
+}
+
+// Text Color Utilities
+@each $shade-name, $shade-color in $shades {
+  .text-#{$shade-name} {
+    color: $shade-color !important;
+  }
+}

@@ -1,5 +1,6 @@
-
 import React from 'react';
+import { Play } from 'lucide-react';
+import { COLOR, ICONS } from '../../../core/constants';
 
 const RitualSection: React.FC = () => {
   return (
@@ -15,8 +16,7 @@ const RitualSection: React.FC = () => {
             <button className="group relative">
               <div className="absolute -inset-8 rounded-full border border-white/20 scale-100 group-hover:scale-125 transition-transform duration-700"></div>
               <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-white/20 transition-all">
-                {/* Add Icon */}
-                <span className="material-symbols-outlined text-4xl">play_arrow</span>
+                <Play color={COLOR.TEXT.MUTED} size={ICONS.SIZE.LG} />
               </div>
             </button>
           </div>

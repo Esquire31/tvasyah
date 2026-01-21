@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { PRODUCTS } from '../../../../constants';
+import { PRODUCTS } from '../../../constants';
+import { COLOR, ICONS } from '../../../core/constants';
+import { MoveRight, MoveLeft } from 'lucide-react';
 
 const Bestsellers: React.FC = () => {
   return (
@@ -13,12 +15,10 @@ const Bestsellers: React.FC = () => {
           </div>
           <div className="flex gap-4">
             <button className="w-12 h-12 rounded-full border border-sage/20 flex items-center justify-center text-sage hover:bg-primary hover:text-white transition-all">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined">west</span>
+              <MoveLeft color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
             </button>
             <button className="w-12 h-12 rounded-full border border-sage/20 flex items-center justify-center text-sage hover:bg-primary hover:text-white transition-all">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined">east</span>
+              <MoveRight color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
             </button>
           </div>
         </div>

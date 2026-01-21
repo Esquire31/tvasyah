@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
 import Header from './components/shared/Header';
-import Hero from './components/pages/homepage/sections/Hero';
+import Hero from './pages/homepage/sections/Hero';
 import Marquee from './components/ui/Marquee';
-import AlchemySection from './components/pages/homepage/sections/AlchemySection';
-import RitualSection from './components/pages/homepage/sections/RitualSection';
-import Bestsellers from './components/pages/homepage/sections/Bestsellers';
-import Testimonials from './components/pages/homepage/sections/Testimonials';
-import AboutHero from './components/pages/about/sections/AboutHero';
-import FounderLegacy from './components/pages/about/sections/FounderLegacy';
-import Timeline from './components/pages/about/sections/Timeline';
-import Promises from './components/pages/about/sections/Promises';
+import AlchemySection from './pages/homepage/sections/AlchemySection';
+import RitualSection from './pages/homepage/sections/RitualSection';
+import Bestsellers from './pages/homepage/sections/Bestsellers';
+import Testimonials from './pages/homepage/sections/Testimonials';
+import AboutHero from './pages/about/sections/AboutHero';
+import FounderLegacy from './pages/about/sections/FounderLegacy';
+import Timeline from './pages/about/sections/Timeline';
+import Promises from './pages/about/sections/Promises';
 import Footer from './components/shared/Footer';
 import { INGREDIENTS, PUBLICATIONS } from './constants';
 

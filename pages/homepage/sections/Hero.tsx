@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { COLOR } from '@/core/constants/color';
 
 const Hero: React.FC = () => {
   return (

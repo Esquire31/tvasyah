@@ -11,12 +11,13 @@ const FounderLegacy: React.FC = () => {
             <h3 className="text-5xl serif-text leading-tight text-emerald-deep dark:text-white">The Founder's <br/>Legacy</h3>
           </div>
           <div className="relative pl-12 border-l-2 border-gold-muted/30 py-4">
+          {/* Add Icon */}
             <span className="material-symbols-outlined absolute left-0 top-0 text-gold-muted text-4xl opacity-50">format_quote</span>
             <p className="serif-text italic text-2xl text-sage dark:text-gray-300 leading-relaxed">
               "We didn't just want to create another skincare brand. We wanted to create a portal to self-reverence, using the same botanical gold that graced the altars of our ancestors."
             </p>
             <div className="mt-8">
-              <h4 className="font-bold text-sm tracking-[0.2em] uppercase text-emerald-deep dark:text-white">Ananya Sharma</h4>
+              <h4 className="font-bold text-sm tracking-[0.2em] uppercase text-emerald-deep dark:text-white">Anvi Aggarwal</h4>
               <p className="text-xs text-sage uppercase tracking-widest mt-1">Founder & Master Formulator</p>
             </div>
           </div>

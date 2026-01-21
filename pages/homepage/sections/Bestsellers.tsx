@@ -13,9 +13,11 @@ const Bestsellers: React.FC = () => {
           </div>
           <div className="flex gap-4">
             <button className="w-12 h-12 rounded-full border border-sage/20 flex items-center justify-center text-sage hover:bg-primary hover:text-white transition-all">
+              {/* Add Icon */}
               <span className="material-symbols-outlined">west</span>
             </button>
             <button className="w-12 h-12 rounded-full border border-sage/20 flex items-center justify-center text-sage hover:bg-primary hover:text-white transition-all">
+              {/* Add Icon */}
               <span className="material-symbols-outlined">east</span>
             </button>
           </div>

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { NAV_ITEMS } from '../../constants';
+import { Search } from 'lucide-react';
 
 interface HeaderProps {
   onNavigate: (view: string) => void;
@@ -51,14 +52,19 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
         </div>
         <div className="flex items-center gap-6">
           <div className="hidden sm:flex items-center bg-background-light dark:bg-gray-800 rounded-full px-4 py-1.5 border border-sage/10">
-            <span className="material-symbols-outlined text-sage text-sm">search</span>
+            {/* Add Icon */}
+            <span className="material-symbols-outlined text-sage text-sm">
+              <Search  />
+            </span>
             <input className="bg-transparent border-none focus:ring-0 text-xs w-32 placeholder-sage/50 dark:text-white" placeholder="Search..." type="text"/>
           </div>
           <div className="flex gap-4">
             <button className="text-sage hover:text-primary transition-colors">
+              {/* Add Icon */}
               <span className="material-symbols-outlined">person</span>
             </button>
             <button className="text-sage hover:text-primary transition-colors relative">
+              {/* Add Icon */}
               <span className="material-symbols-outlined">shopping_bag</span>
               <span className="absolute -top-1 -right-1 bg-primary text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
             </button>

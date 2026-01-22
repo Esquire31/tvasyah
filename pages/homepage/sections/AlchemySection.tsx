@@ -1,4 +1,6 @@
 import React from 'react';
+import { COLOR, ICONS } from '../../../core/constants';
+import { Sprout, FlaskConical } from 'lucide-react';
 
 const AlchemySection: React.FC = () => {
   return (
@@ -30,14 +32,17 @@ const AlchemySection: React.FC = () => {
           </p>
           <div className="grid grid-cols-2 gap-8 pt-6">
             <div className="space-y-2">
-              {/* Add Icon */}
-              <span className="material-symbols-outlined text-gold-muted text-3xl">spa</span>
+              <span className="material-symbols-outlined text-gold-muted text-3xl">
+                <Sprout color={COLOR.TEXT.SUBTLE} size={ICONS.SIZE.LG} />
+              </span>
               <h4 className="font-bold text-xs uppercase tracking-widest dark:text-white">Vedic Origins</h4>
               <p className="text-sm text-sage/70 dark:text-gray-400">Authentic recipes from the ancient texts.</p>
             </div>
             <div className="space-y-2">
               {/* Add Icon */}
-              <span className="material-symbols-outlined text-primary text-3xl">science</span>
+              <span className="material-symbols-outlined text-primary text-3xl">
+                <FlaskConical color={COLOR.TEXT.GREEN} size={ICONS.SIZE.LG} />
+              </span>
               <h4 className="font-bold text-xs uppercase tracking-widest dark:text-white">Modern Bio-tech</h4>
               <p className="text-sm text-sage/70 dark:text-gray-400">Dermatologically tested for results.</p>
             </div>

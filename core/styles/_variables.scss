@@ -11,12 +11,18 @@ $GOLD_MUTED: #c5a059;
 
 $EMERALD_GREEN: #08211b;
 
+$MOSS_GREEN: #1D2B23;
+
+$TEXT_GREEN: #121b16;
+
 $COLOR-PALETTES: (
   "uranium-green": $URANIUM_GREEN,
   "terracotta-gold": $TERRACOTTA_GOLD,
   "sage": $SAGE,
   "gold-muted": $GOLD_MUTED,
-  "emerald-green": $EMERALD_GREEN
+  "emerald-green": $EMERALD_GREEN,
+  "moss-green": $MOSS_GREEN,
+  "text-green": $TEXT_GREEN
 );
 
 // Generate shades with varying opacity for each base color

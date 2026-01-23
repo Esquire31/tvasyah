@@ -12,6 +12,8 @@ const TEXT_GREEN = '#121b16';
 
 const CREAM = '#f7f6ef';
 
+const CREAM_HEADER = '#E5E1D8';
+
 export const COLOR = {
     TEXT: {
         PRIMARY: TEXT_GREEN,

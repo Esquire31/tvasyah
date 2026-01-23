@@ -16,6 +16,7 @@ $MOSS_GREEN: #1D2B23;
 $TEXT_GREEN: #121b16;
 
 $CREAM: #f7f6ef;
+$CREAM_HEADER: #E5E1D8;
 
 $COLOR-PALETTES: (
   "uranium-green": $URANIUM_GREEN,
@@ -26,6 +27,7 @@ $COLOR-PALETTES: (
   "moss-green": $MOSS_GREEN,
   "text-green": $TEXT_GREEN,
   "cream": $CREAM,
+  "cream-header": $CREAM_HEADER
 );
 
 // Generate shades with varying opacity for each base color
@@ -88,6 +90,27 @@ $shades: ();
 // Organic Border Shape
 .organic-border {
   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+}
+
+// Custom Cursor Styles with Negative Blend Mode
+body {
+  cursor: none;
+}
+
+a, button, [role="button"], input, textarea {
+  cursor: none;
+}
+
+.negative-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease-out;
 }
 
 .leaf-mask {

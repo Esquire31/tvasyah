@@ -4,7 +4,7 @@ import { COLOR, ICONS } from '../../../core/constants';
 
 const RitualSection: React.FC = () => {
   return (
-    <section className="bg-emerald-deep text-white">
+    <section className="bg-moss-green text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative h-[400px] lg:h-auto overflow-hidden">
           <img 
@@ -41,7 +41,7 @@ const RitualSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="w-fit border border-gold-muted/50 text-gold-muted px-10 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-gold-muted hover:text-emerald-deep transition-all">
+          <button className="w-fit border border-gold-muted/50 text-gold-muted hover:text-text-green px-10 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-gold-muted hover:text-emerald-deep transition-all">
             View Full Ritual Guide
           </button>
         </div>

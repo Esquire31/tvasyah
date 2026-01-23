@@ -32,7 +32,7 @@ const App: React.FC = () => {
             <Hero />
             
             {/* Ingredients Marquee */}
-            <section className="py-20 bg-background-light dark:bg-background-dark border-y border-sage/10 overflow-hidden">
+            <section className="py-16 bg-moss-green dark:bg-background-dark border-y border-sage/10 overflow-hidden">
               <Marquee items={INGREDIENTS} variant="large-text" />
             </section>
 

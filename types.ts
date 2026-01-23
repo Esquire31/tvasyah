@@ -15,6 +15,7 @@ export interface Testimonial {
   role: string;
   content: string;
   initials: string;
+  ratings?: number;
 }
 
 export interface NavItem {

@@ -87,10 +87,10 @@ $shades: ();
   }
 }
 
-// Organic Border Shape
-.organic-border {
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-}
+// // Organic Border Shape
+// .organic-border {
+//   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+// }
 
 // Custom Cursor Styles with Negative Blend Mode
 body {
@@ -113,9 +113,9 @@ a, button, [role="button"], input, textarea {
   transition: transform 0.2s ease-out;
 }
 
-.leaf-mask {
-  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C50 0 90 25 90 60C90 85 72 100 50 100C28 100 10 85 10 60C10 25 50 0 50 0Z" fill="black"/></svg>');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
+// .leaf-mask {
+//   mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C50 0 90 25 90 60C90 85 72 100 50 100C28 100 10 85 10 60C10 25 50 0 50 0Z" fill="black"/></svg>');
+//   mask-size: contain;
+//   mask-repeat: no-repeat;
+//   mask-position: center;
+// }

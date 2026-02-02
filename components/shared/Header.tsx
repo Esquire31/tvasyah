@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 20;
+      const scrolled = window.scrollY > 70;
       console.log('[Header] scrollY:', window.scrollY, 'scrolled:', scrolled);
       setIsScrolled(scrolled);
     };
@@ -26,9 +26,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
   return (
     <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
-        ? 'bg-cream-60 dark:bg-background-dark/75 py-5 shadow-sm' 
+        ? 'bg-cream-60 dark:bg-background-dark/75 py-5' 
         : 'bg-cream-header-90 dark:bg-background-dark/90 py-6'
-    } backdrop-blur-md border-b border-sage/10 px-6 lg:px-20`}>
+    } backdrop-blur-md px-6 lg:px-20`}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <div className="flex items-center gap-12">
           <div 

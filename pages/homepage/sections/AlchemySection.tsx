@@ -8,7 +8,7 @@ const AlchemySection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div className="relative group">
           <div className="absolute -top-12 -left-12 w-64 h-64 bg-gold-muted/10 rounded-full blur-3xl"></div>
-          <div className="relative z-10 aspect-[4/5] overflow-hidden organic-border shadow-2xl rotate-[-2deg]">
+          <div className="relative cursor-hover z-10 aspect-[4/5] overflow-hidden organic-border shadow-2xl rotate-[-2deg] hover:rotate-[5deg] transition-transform duration-500 ease-out">
             <img 
               alt="Ayurvedic Ingredients" 
               className="w-full h-full object-cover" 

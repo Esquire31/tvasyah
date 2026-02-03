@@ -4,7 +4,7 @@ import { COLOR, ICONS } from '../../../core/constants';
 
 const RitualSection: React.FC = () => {
   return (
-    <section className="bg-emerald-deep text-white">
+    <section className="bg-moss-green text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative h-[400px] lg:h-auto overflow-hidden">
           <img 
@@ -33,7 +33,7 @@ const RitualSection: React.FC = () => {
               { num: '03', title: 'Seal', desc: 'Lock in the elixirs with our Saffron Infused Day Cream, creating a breathable barrier against urban pollutants.' }
             ].map((step) => (
               <div key={step.num} className="flex gap-8 group">
-                <span className="text-gold-muted font-serif text-3xl opacity-50 group-hover:opacity-100 transition-opacity">{step.num}</span>
+                <span className="text-gold-muted cursor-hover font-serif text-3xl opacity-50 group-hover:opacity-100 transition-opacity">{step.num}</span>
                 <div className="space-y-2 border-l border-white/10 pl-8">
                   <h4 className="text-lg font-medium tracking-wide uppercase">{step.title}</h4>
                   <p className="text-white/60 text-sm leading-relaxed max-w-md">{step.desc}</p>
@@ -41,7 +41,7 @@ const RitualSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="w-fit border border-gold-muted/50 text-gold-muted px-10 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-gold-muted hover:text-emerald-deep transition-all">
+          <button className="w-fit border border-gold-muted/50 text-gold-muted hover:text-text-green px-10 py-4 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-gold-muted hover:text-emerald-deep transition-all">
             View Full Ritual Guide
           </button>
         </div>

@@ -1,2 +1,6 @@
 // Import variables and generate utility classes
 @use './variables';
+
+body, button, a, input, textarea, select {
+	cursor: none !important;
+}

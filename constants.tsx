@@ -66,21 +66,24 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Elena P.',
     role: 'Verified Purist',
     content: "The 24K Radiance oil has completely transformed my skin's texture. It's the ritual I look forward to most every single morning.",
-    initials: 'EP'
+    initials: 'EP',
+    ratings: 4.5
   },
   {
     id: '2',
     name: 'Sonia K.',
     role: 'Holistic Esthetician',
     content: "Finally, a brand that respects ancient wisdom without compromising on clinical efficacy. My melasma has visibly faded.",
-    initials: 'SK'
+    initials: 'SK',
+    ratings: 5
   },
   {
     id: '3',
     name: 'Marcus W.',
     role: 'Loyal Member',
     content: "The scent alone transports me to a luxury spa. It's not just skincare, it's a sensory experience that grounds me.",
-    initials: 'MW'
+    initials: 'MW',
+    ratings: 4.5
   }
 ];
 

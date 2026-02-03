@@ -4,18 +4,18 @@ import { Sprout, FlaskConical } from 'lucide-react';
 
 const AlchemySection: React.FC = () => {
   return (
-    <section className="py-24 px-6 lg:px-20 max-w-[1440px] mx-auto">
+    <section className="bg-cream py-24 px-6 lg:px-20 max-w-[1440px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div className="relative group">
-          <div className="absolute -inset-4 bg-gold-muted/5 rounded-2xl transform rotate-2 transition-transform group-hover:rotate-1"></div>
-          <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+          <div className="absolute -top-12 -left-12 w-64 h-64 bg-gold-muted/10 rounded-full blur-3xl"></div>
+          <div className="relative cursor-hover z-10 aspect-[4/5] overflow-hidden organic-border shadow-2xl rotate-[-2deg] hover:rotate-[5deg] transition-transform duration-500 ease-out">
             <img 
               alt="Ayurvedic Ingredients" 
-              className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" 
+              className="w-full h-full object-cover" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO2BtGmQJXVvRE6XiGOrg6d9H9JUAcjpYH6UFA2Yzta_TZDH5th9HF5tDO2Sd_RVQBpXAeG4ptYvHQQedapduqVDnQb4ZB9bjVyp4lv3958_pk2N1MBIbUXDvi9VWqlmAmKqrOILhWCTDNHAOQrKhz2p5q7QoDhfv4VaLrEvWb4EZy9nPQGl7kv_Sbt7a5qVMpADteQpOV0gO03buu_zCwjsQf3HBom_dYCcW6uF92nKzZGNiZbohkKXHa6Ab3oieomq1DwufbPw"
             />
           </div>
-          <div className="absolute bottom-8 -right-8 bg-cream-soft dark:bg-background-dark p-8 rounded-lg zen-shadow max-w-xs border border-gold-muted/20">
+          <div className="absolute bottom-8 -right-8 z-20 bg-cream-soft dark:bg-background-dark p-8 rounded-lg zen-shadow max-w-xs border border-gold-muted/20">
             <p className="serif-text italic text-gold-muted text-xl mb-2">"Purity is not an option, it is our lineage."</p>
             <span className="text-[10px] uppercase tracking-widest text-sage">Tvasyah Founders</span>
           </div>
@@ -39,9 +39,8 @@ const AlchemySection: React.FC = () => {
               <p className="text-sm text-sage/70 dark:text-gray-400">Authentic recipes from the ancient texts.</p>
             </div>
             <div className="space-y-2">
-              {/* Add Icon */}
               <span className="material-symbols-outlined text-primary text-3xl">
-                <FlaskConical color={COLOR.TEXT.GREEN} size={ICONS.SIZE.LG} />
+                <FlaskConical color={COLOR.TEXT.MUTED} size={ICONS.SIZE.LG} />
               </span>
               <h4 className="font-bold text-xs uppercase tracking-widest dark:text-white">Modern Bio-tech</h4>
               <p className="text-sm text-sage/70 dark:text-gray-400">Dermatologically tested for results.</p>

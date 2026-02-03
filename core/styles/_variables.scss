@@ -11,12 +11,23 @@ $GOLD_MUTED: #c5a059;
 
 $EMERALD_GREEN: #08211b;
 
+$MOSS_GREEN: #1D2B23;
+
+$TEXT_GREEN: #121b16;
+
+$CREAM: #f7f6ef;
+$CREAM_HEADER: #E5E1D8;
+
 $COLOR-PALETTES: (
   "uranium-green": $URANIUM_GREEN,
   "terracotta-gold": $TERRACOTTA_GOLD,
   "sage": $SAGE,
   "gold-muted": $GOLD_MUTED,
-  "emerald-green": $EMERALD_GREEN
+  "emerald-green": $EMERALD_GREEN,
+  "moss-green": $MOSS_GREEN,
+  "text-green": $TEXT_GREEN,
+  "cream": $CREAM,
+  "cream-header": $CREAM_HEADER
 );
 
 // Generate shades with varying opacity for each base color
@@ -44,8 +55,14 @@ $shades: ();
   .hover\:text-#{$name}:hover {
     color: $base-color !important;
   }
+  .hover\:bg-#{$name}:hover {
+    background-color: $base-color !important;
+  }
   .group:hover .group-hover\:text-#{$name} {
     color: $base-color !important;
+  }
+  .group:hover .group-hover\:bg-#{$name} {
+    background-color: $base-color !important;
   }
 }
 
@@ -69,3 +86,36 @@ $shades: ();
     color: $shade-color !important;
   }
 }
+
+// // Organic Border Shape
+// .organic-border {
+//   border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+// }
+
+// Custom Cursor Styles with Negative Blend Mode
+body {
+  cursor: none;
+}
+
+a, button, [role="button"], input, textarea {
+  cursor: none;
+}
+
+.negative-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease-out;
+}
+
+// .leaf-mask {
+//   mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0C50 0 90 25 90 60C90 85 72 100 50 100C28 100 10 85 10 60C10 25 50 0 50 0Z" fill="black"/></svg>');
+//   mask-size: contain;
+//   mask-repeat: no-repeat;
+//   mask-position: center;
+// }

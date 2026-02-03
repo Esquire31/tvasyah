@@ -1,5 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Lenis from '@studio-freight/lenis';
+import FairyDustCursor from './components/ui/cursor/FairyDustCursor';
 import Header from './components/shared/Header';
 import Hero from './pages/homepage/sections/Hero';
 import Marquee from './components/ui/Marquee';
@@ -13,9 +15,32 @@ import Timeline from './pages/about/sections/Timeline';
 import Promises from './pages/about/sections/Promises';
 import Footer from './components/shared/Footer';
 import { INGREDIENTS, PUBLICATIONS } from './constants';
+import { COLOR } from './core/constants';
+import NegativeCursor from './components/ui/cursor/NegativeCursor';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState('home');
+
+  // Initialize Lenis smooth scrolling
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const handleNavigate = (view: string) => {
     setCurrentView(view);
@@ -24,6 +49,8 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen">
+      {/* <NegativeCursor /> */}
+      <FairyDustCursor />
       <Header onNavigate={handleNavigate} currentView={currentView} />
       
       <main className="transition-opacity duration-500">
@@ -32,7 +59,7 @@ const App: React.FC = () => {
             <Hero />
             
             {/* Ingredients Marquee */}
-            <section className="py-20 bg-background-light dark:bg-background-dark border-y border-sage/10 overflow-hidden">
+            <section className="py-16 bg-moss-green dark:bg-background-dark border-y border-sage/10 overflow-hidden">
               <Marquee items={INGREDIENTS} variant="large-text" />
             </section>
 

@@ -4,7 +4,7 @@ import { MoveRight, BadgeCheck, Leaf, Globe, Share2, Camera } from 'lucide-react
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-emerald-green text-white">
+    <footer className="bg-moss-green text-white">
       <section className="relative py-32 px-6 lg:px-20 border-b border-white/10 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
           <div className="space-y-4">
@@ -16,14 +16,14 @@ const Footer: React.FC = () => {
           </div>
           <form className="max-w-xl mx-auto flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
             <input 
-              className="flex-1 bg-transparent border-b border-white/30 focus:border-primary px-4 py-4 text-white placeholder:text-white/40 focus:ring-0 transition-colors" 
+              className="flex-1 bg-transparent border-b border-white/30 focus:border-gold-muted px-4 py-4 text-gold-muted placeholder:text-white/40 focus:ring-0 transition-colors" 
               placeholder="Your email address" 
               type="email"
             />
-            <button className="bg-primary text-emerald-deep px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+            <button className="text-gold-muted hover:text-text-green hover:bg-gold-muted/80 px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 border border-gold-muted transition-all group">
               Join 
               <span className="material-symbols-outlined !text-base">
-                <MoveRight color={COLOR.TEXT.BLACK} size={ICONS.SIZE.SM} />
+                <MoveRight className="text-gold-muted group-hover:text-text-green transition-colors" size={ICONS.SIZE.SM} />
               </span>
             </button>
           </form>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
             <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40">Collections</h5>
             <ul className="space-y-5 text-sm text-white/70 font-light">
               {['Face Rituals', 'Body Care', 'Hair Elixirs', 'Gifting Suites', 'Travel Sets'].map(item => (
-                <li key={item}><a className="hover:text-primary transition-colors" href="#">{item}</a></li>
+                <li key={item}><a className="hover:text-gold-muted transition-colors" href="#">{item}</a></li>
               ))}
             </ul>
           </div>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
             <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40">Philosophy</h5>
             <ul className="space-y-5 text-sm text-white/70 font-light">
               {['Our Story', 'Ayurvedic Roots', 'Sustainability', 'Ingredient Sourcing', 'Community'].map(item => (
-                <li key={item}><a className="hover:text-primary transition-colors" href="#">{item}</a></li>
+                <li key={item}><a className="hover:text-gold-muted transition-colors" href="#">{item}</a></li>
               ))}
             </ul>
           </div>
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
             <h5 className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/40">Support</h5>
             <ul className="space-y-5 text-sm text-white/70 font-light">
               {['Shipping Info', 'Returns & Exchanges', 'Contact Us', 'Store Locator', 'FAQ'].map(item => (
-                <li key={item}><a className="hover:text-primary transition-colors" href="#">{item}</a></li>
+                <li key={item}><a className="hover:text-gold-muted transition-colors" href="#">{item}</a></li>
               ))}
             </ul>
           </div>
@@ -93,14 +93,14 @@ const Footer: React.FC = () => {
             <a className="hover:text-white transition-colors" href="#">Cookie Settings</a>
           </div>
           <div className="flex gap-6">
-            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              <Globe color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
+            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-gold-muted hover:border-gold-muted transition-all group" href="#">
+              <Globe className="text-sage group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
             </a>
-            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              <Share2 color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
+            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-gold-muted hover:border-gold-muted transition-all group" href="#">
+              <Share2 className="text-sage group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
             </a>
-            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary transition-all" href="#">
-              <Camera color={COLOR.TEXT.MUTED} size={ICONS.SIZE.MD} />
+            <a className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-gold-muted hover:border-gold-muted transition-all group" href="#">
+              <Camera className="text-sage group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
             </a>
           </div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-white/30">

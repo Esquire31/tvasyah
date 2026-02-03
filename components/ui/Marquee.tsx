@@ -5,9 +5,10 @@ interface MarqueeProps {
   items: string[];
   variant?: 'large-text' | 'small-logos';
   reverse?: boolean;
+  speed?: number; // duration in seconds
 }
 
-const Marquee: React.FC<MarqueeProps> = ({ items, variant = 'large-text', reverse = false }) => {
+const Marquee: React.FC<MarqueeProps> = ({ items, variant = 'large-text', reverse = false, speed = 50 }) => {
   const content = (
     <div className={`flex items-center gap-12 lg:gap-24 px-6`}>
       {items.map((item, idx) => (
@@ -27,7 +28,10 @@ const Marquee: React.FC<MarqueeProps> = ({ items, variant = 'large-text', revers
 
   return (
     <div className={`overflow-hidden flex whitespace-nowrap ${variant === 'small-logos' ? 'mask-fade' : ''}`}>
-      <div className={`flex items-center ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+      <div 
+        className={`flex items-center ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+        style={{ animationDuration: `${speed}s` }}
+      >
         {content}
         {content}
       </div>

@@ -7,6 +7,7 @@ export interface Product {
   image: string;
   tagline: string;
   rating: number;
+  ingredients?: string[];
 }
 
 export interface Testimonial {

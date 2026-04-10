@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductFeatures: React.FC = () => {
   return (
-    <section className="py-24 bg-cream-soft dark:bg-background-dark/30">
+    <section className="py-24 bg-cream dark:bg-background-dark/30">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {['Tested Efficacy', 'Pure Ingredients', 'Sustainable'].map((feature, idx) => (

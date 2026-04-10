@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../constants';
 import { Search, CircleUser, ShoppingCart } from 'lucide-react';
 import { COLOR, ICONS } from '../../core/constants';
 
 interface HeaderProps {
   onCartClick: () => void;
+  cartCount: number;
 }
 
-const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
+const Header: React.FC<HeaderProps> = ({ onCartClick, cartCount }) => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const isShopRoute = location.pathname.startsWith('/shop') || location.pathname === '/collection' || location.pathname === '/rituals' || location.pathname === '/journal';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +25,14 @@ const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+const bgStyle = !isScrolled && !isShopRoute
+  ? 'bg-cream-header-90 dark:bg-background-dark/90'
+  : 'bg-cream-60 dark:bg-background-dark/75';
+
+const headerStyle = `${bgStyle} ${isScrolled ? 'py-5' : 'py-6'}`;
+
   return (
-    <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-cream-60 dark:bg-background-dark/75 py-5' 
-        : 'bg-cream-header-90 dark:bg-background-dark/90 py-6'
-    } backdrop-blur-md px-6 lg:px-20`}>
+    <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${headerStyle} backdrop-blur-md px-6 lg:px-20`}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <div className="flex items-center gap-12">
           <Link 
@@ -63,7 +68,11 @@ const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
               className="relative transition-all duration-200 group"
             >
               <ShoppingCart className="text-sage transition-colors group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
-              <span className="absolute -top-1 -right-1 bg-moss-green text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-moss-green text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </button>
           </div>
         </div>

@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ProductListHeader: React.FC = () => {
+interface ProductListHeaderProps {
+  count: number;
+}
+
+const ProductListHeader: React.FC<ProductListHeaderProps> = ({ count }) => {
   return (
     <header className="px-6 lg:px-20 mb-16 max-w-[1440px] mx-auto">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-sage/5 pb-12">
@@ -11,7 +15,7 @@ const ProductListHeader: React.FC = () => {
         </div>
         <div className="text-right">
           <span className="text-[10px] uppercase tracking-[0.2em] opacity-50 dark:text-gray-400 block mb-1">Items Found</span>
-          <span className="text-2xl font-serif italic dark:text-white">24</span>
+          <span className="text-2xl font-serif italic dark:text-white">{count}</span>
         </div>
       </div>
     </header>

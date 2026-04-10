@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Minus, Plus, Trash2 } from 'lucide-react';
 
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: number;
   quantity: number;
@@ -12,31 +12,12 @@ interface CartItem {
 interface CartNavProps {
   isOpen: boolean;
   onClose: () => void;
+  cartItems: CartItem[];
+  onQuantityChange: (id: string, delta: number) => void;
+  onRemove: (id: string) => void;
 }
 
-const CartNav: React.FC<CartNavProps> = ({ isOpen, onClose }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      name: '24K Radiance Face Oil',
-      price: 124,
-      quantity: 1,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhxUz9uwx-3cUfvT7XM7sv9appxz1bs475OE44XLK-07QuJF4lhb4Z3yxPiQ2d_s8hJ5ywM512s9UUUDsww5dRehRf5dpy0F7sxD5RCkyOGLD9Tay64-dCJFA6yOZBwI_iB1ZouI8Ew1FfnVWZh-XLYsY6mvCn0HrwJbKNUwI1fAeimm4n1AKHp7wJkjCKTM5L_ni7S3VUwhTIl8wL9-6uYK8GRQ9Rg8waFcp_PHertov6LfzVNX1JI6-T-lSRrmNIBa5Wnqm32w'
-    }
-  ]);
-
-  const handleQuantityChange = (id: number, delta: number) => {
-    setCartItems(cartItems.map(item => 
-      item.id === id 
-        ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-        : item
-    ));
-  };
-
-  const handleRemove = (id: number) => {
-    setCartItems(cartItems.filter(item => item.id !== id));
-  };
-
+const CartNav: React.FC<CartNavProps> = ({ isOpen, onClose, cartItems, onQuantityChange, onRemove }) => {
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const tax = subtotal * 0.1;
   const total = subtotal + tax;
@@ -88,25 +69,25 @@ const CartNav: React.FC<CartNavProps> = ({ isOpen, onClose }) => {
                     <p className="text-xs text-sage/60 dark:text-gray-400 mt-1">30ml / 1.01 fl. oz</p>
                   </div>
                   <div className="space-y-3">
-                    <p className="font-serif text-moss-green dark:text-white">${item.price}</p>
+                    <p className="font-serif text-moss-green dark:text-white">₹{item.price}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center border border-sage/20 rounded-full px-2 py-1">
                         <button 
-                          onClick={() => handleQuantityChange(item.id, -1)}
+                          onClick={() => onQuantityChange(item.id, -1)}
                           className="p-1 hover:text-gold-muted transition-colors"
                         >
                           <Minus size={12} />
                         </button>
                         <span className="px-3 text-xs font-medium">{item.quantity}</span>
                         <button 
-                          onClick={() => handleQuantityChange(item.id, 1)}
+                          onClick={() => onQuantityChange(item.id, 1)}
                           className="p-1 hover:text-gold-muted transition-colors"
                         >
                           <Plus size={12} />
                         </button>
                       </div>
                       <button 
-                        onClick={() => handleRemove(item.id)}
+                        onClick={() => onRemove(item.id)}
                         className="text-sage/40 hover:text-red-500 transition-colors"
                       >
                         <Trash2 size={16} />
@@ -125,23 +106,23 @@ const CartNav: React.FC<CartNavProps> = ({ isOpen, onClose }) => {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between text-sage dark:text-gray-400">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-sage dark:text-gray-400">
                 <span>Tax (10%)</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>₹{tax.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-lg font-serif text-moss-green dark:text-white border-t border-sage/10 pt-2">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
             </div>
-            <button className="w-full py-4 bg-moss-green text-white rounded-full uppercase text-[11px] tracking-widest font-medium hover:bg-moss-green/90 transition-all shadow-lg active:scale-[0.98]">
+            <button className="w-full bg-moss-green text-gold-muted hover:text-text-green hover:bg-gold-muted px-10 py-3 rounded-full font-semibold text-[11px] tracking-widest uppercase transition-all shadow-xl shadow-emerald-green/10">
               Proceed to Checkout
             </button>
             <button 
               onClick={onClose}
-              className="w-full py-3 border border-sage/20 text-sage dark:text-gray-300 dark:border-sage/30 rounded-full uppercase text-[11px] tracking-widest font-medium hover:bg-cream-soft dark:hover:bg-background-dark/50 transition-all"
+              className="w-full py-3 border border-sage/20 text-sage dark:text-gray-300 dark:border-sage/30 rounded-full uppercase text-[11px] tracking-widest font-medium hover:bg-cream dark:hover:bg-background-dark/50 transition-all"
             >
               Continue Shopping
             </button>

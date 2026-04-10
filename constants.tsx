@@ -37,8 +37,9 @@ export const PRODUCTS: Product[] = [
     category: 'Illuminate & Firm',
     price: 124,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhxUz9uwx-3cUfvT7XM7sv9appxz1bs475OE44XLK-07QuJF4lhb4Z3yxPiQ2d_s8hJ5ywM512s9UUUDsww5dRehRf5dpy0F7sxD5RCkyOGLD9Tay64-dCJFA6yOZBwI_iB1ZouI8Ew1FfnVWZh-XLYsY6mvCn0HrwJbKNUwI1fAeimm4n1AKHp7wJkjCKTM5L_ni7S3VUwhTIl8wL9-6uYK8GRQ9Rg8waFcp_PHertov6LfzVNX1JI6-T-lSRrmNIBa5Wnqm32w',
-    tagline: 'Quick Buy — $124',
-    rating: 5
+    tagline: 'Quick Buy — ₹124',
+    rating: 5,
+    ingredients: ['Saffron', 'Ashwagandha', 'Golden Jojoba']
   },
   {
     id: '2',
@@ -46,8 +47,9 @@ export const PRODUCTS: Product[] = [
     category: 'Deeply Nourishing',
     price: 88,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCtXHe52gjZekbRlLX5fQOMQTuKPzfuA4ma--gV0927B8JEp4WvvMyNCDf0rn8GK4Rjvo-jAw6aWKZwShGOG-XDNaKEipbUCLohMVIsW5F8U9d7opPJNdXaTGVWH1tvEE586EWVGG_2kTbxOEeU0bM9MSqTrsI5h9PN7onCEZIfA-ENaV0dES3g_WzAtENofRHSK7coRecWoeH8yA4YqGVIsww0KlxSky3-UTXWafARzOuRwrTG01RyCvSPk98ANeUJkvEjy08RbA',
-    tagline: 'Quick Buy — $88',
-    rating: 5
+    tagline: 'Quick Buy — ₹88',
+    rating: 5,
+    ingredients: ['Silk Extract', 'Neem', 'Kokum Butter']
   },
   {
     id: '3',
@@ -55,10 +57,23 @@ export const PRODUCTS: Product[] = [
     category: 'Brightening Elixir',
     price: 145,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHd-0qDgMY9hZ2i68uUb6DASFAPRE3Oz1Wg3x1LyFdYWsBGjS8FljzZk6_Xsmz48rh4ZwuXZTCU6ZcbM8vzM2oNXDLlDWcTZ5oXR_q7mQthDHk8Ndk50jPXkxu_S32KRaiydrL280ny3auS-Kjfl5rwqRuWIxI6DK3SKodPJLqLpXSEestGoMUm96LMk30sCZ05pfVQi0cx635al3kMoJrMSYQ5tQhIPUBEt8n5tcRHVxkPMhYYaVPk9m-pK22Sx-jtTrnvHkDMg',
-    tagline: 'Quick Buy — $145',
-    rating: 5
+    tagline: 'Quick Buy — ₹145',
+    rating: 5,
+    ingredients: ['Saffron', 'Turmeric', 'Brahmi']
   }
 ];
+
+export const fetchProducts = async (): Promise<Product[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(PRODUCTS), 150);
+  });
+};
+
+export const fetchProductById = async (id: string): Promise<Product | undefined> => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(PRODUCTS.find((product) => product.id === id)), 150);
+  });
+};
 
 export const TESTIMONIALS: Testimonial[] = [
   {

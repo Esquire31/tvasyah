@@ -18,7 +18,7 @@ const FounderLegacy: React.FC = () => {
                 "We didn't just want to create another skincare brand. We wanted to create a portal to self-reverence, using the same botanical gold that graced the altars of our ancestors."
               </p>
               <div className="mt-8">
-                <h4 className="font-bold text-sm tracking-[0.2em] uppercase text-moss-green dark:text-white">Ananya Aggarwal</h4>
+                <h4 className="font-bold text-sm tracking-[0.2em] uppercase text-moss-green dark:text-white">Anvi Aggarwal</h4>
                 <p className="text-xs text-sage/60 dark:text-gray-400 uppercase tracking-widest mt-1">Founder & Master Formulator</p>
               </div>
             </div>

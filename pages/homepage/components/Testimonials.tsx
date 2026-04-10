@@ -22,10 +22,10 @@ const Testimonials: React.FC = () => {
           {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
             <div key={`${t.id}-${idx}`} className={`min-w-[450px] bg-white/50 dark:bg-background-dark/50 backdrop-blur-sm p-12 organic-border border border-sage/5 space-y-8 ${idx % 3 === 0 ? 'rotate-2' : idx % 3 === 1 ? '-rotate-2' : 'rotate-0'}`}>
             <div className="flex text-gold-muted gap-1 p-3">
-              {[...Array(Math.floor(t.ratings || 5))].map((_, i) => (
+              {[...Array(Math.floor(t.ratings ?? 5))].map((_, i) => (
                 <Star key={i} color={COLOR.TEXT.HIGHLIGHT} fill={COLOR.TEXT.HIGHLIGHT} size={ICONS.SIZE.SM} />
               ))}
-              {(t.ratings % 1 !== 0) && (
+              {(t.ratings && t.ratings % 1 !== 0) && (
                 <StarHalf color={COLOR.TEXT.HIGHLIGHT} fill={COLOR.TEXT.HIGHLIGHT} size={ICONS.SIZE.SM} />
               )}
             </div>

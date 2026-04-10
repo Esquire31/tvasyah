@@ -23,7 +23,7 @@ const RitualSection: React.FC = () => {
         </div>
         <div className="py-24 px-8 lg:px-20 space-y-12 flex flex-col justify-center">
           <div className="space-y-4">
-            <span className="text-primary uppercase tracking-[0.4em] text-[10px] font-bold">The Daily Ceremony</span>
+            <span className="text-gold-muted uppercase tracking-[0.4em] text-[10px] font-bold">The Daily Ceremony</span>
             <h2 className="text-4xl md:text-5xl serif-text">The Morning <i className="italic font-normal">Sattvic</i> Ritual</h2>
           </div>
           <div className="space-y-10">

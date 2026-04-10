@@ -1,25 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import FairyDustCursor from './components/ui/cursor/FairyDustCursor';
 import Header from './components/shared/Header';
-import Hero from './pages/homepage/sections/Hero';
-import Marquee from './components/ui/Marquee';
-import AlchemySection from './pages/homepage/sections/AlchemySection';
-import RitualSection from './pages/homepage/sections/RitualSection';
-import Bestsellers from './pages/homepage/sections/Bestsellers';
-import Testimonials from './pages/homepage/sections/Testimonials';
-import AboutHero from './pages/about/sections/AboutHero';
-import FounderLegacy from './pages/about/sections/FounderLegacy';
-import Timeline from './pages/about/sections/Timeline';
-import Promises from './pages/about/sections/Promises';
 import Footer from './components/shared/Footer';
-import { INGREDIENTS, PUBLICATIONS } from './constants';
-import { COLOR } from './core/constants';
-import NegativeCursor from './components/ui/cursor/NegativeCursor';
+import HomePage from './pages/homepage';
+import AboutPage from './pages/about';
+import ProductsListPage from './pages/products/list';
+import ProductsOverviewPage from './pages/products/overview';
+import CartNav from './components/cart/CartNav';
+import { useState } from 'react';
 
 const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState('home');
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Initialize Lenis smooth scrolling
   useEffect(() => {
@@ -42,58 +36,28 @@ const App: React.FC = () => {
     };
   }, []);
 
-  const handleNavigate = (view: string) => {
-    setCurrentView(view);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div className="min-h-screen">
-      {/* <NegativeCursor /> */}
-      <FairyDustCursor />
-      <Header onNavigate={handleNavigate} currentView={currentView} />
-      
-      <main className="transition-opacity duration-500">
-        {currentView === 'home' ? (
-          <>
-            <Hero />
-            
-            {/* Ingredients Marquee */}
-            <section className="py-16 bg-moss-green dark:bg-background-dark border-y border-sage/10 overflow-hidden">
-              <Marquee items={INGREDIENTS} variant="large-text" />
-            </section>
-
-            <AlchemySection />
-            <RitualSection />
-            <Bestsellers />
-            
-            {/* Publication Marquee */}
-            <section className="py-20 bg-cream-soft dark:bg-background-dark/50 border-y border-gold-muted/10 overflow-hidden">
-              <div className="max-w-[1440px] mx-auto px-6 mb-12 text-center">
-                <span className="text-gold-muted uppercase tracking-[0.3em] text-[10px] font-bold">As Featured In</span>
-              </div>
-              <Marquee items={PUBLICATIONS} variant="small-logos" reverse={true} />
-            </section>
-
-            <Testimonials />
-          </>
-        ) : (
-          <div className="animate-in fade-in duration-700">
-            <AboutHero />
-            <FounderLegacy />
-            <Timeline />
-            <Promises />
-            
-            {/* Re-use testimonials on about page for credibility */}
-            <div className="bg-cream-soft/30">
-              <Testimonials />
-            </div>
-          </div>
-        )}
-      </main>
-      
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen">
+        <FairyDustCursor />
+        <Header onCartClick={() => setIsCartOpen(!isCartOpen)} />
+        
+        <CartNav isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+        
+        <main className="transition-opacity duration-500">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/shop" element={<ProductsOverviewPage />} />
+            <Route path="/collection" element={<ProductsListPage />} />
+            <Route path="/rituals" element={<ProductsListPage />} />
+            <Route path="/journal" element={<ProductsListPage />} />
+          </Routes>
+        </main>
+        
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { NAV_ITEMS } from '../../constants';
 import { Search, CircleUser, ShoppingCart } from 'lucide-react';
 import { COLOR, ICONS } from '../../core/constants';
 
 interface HeaderProps {
-  onNavigate: (view: string) => void;
-  currentView: string;
+  onCartClick: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
+const Header: React.FC<HeaderProps> = ({ onCartClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 70;
-      console.log('[Header] scrollY:', window.scrollY, 'scrolled:', scrolled);
       setIsScrolled(scrolled);
     };
 
@@ -24,16 +23,16 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+    <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${
       isScrolled 
         ? 'bg-cream-60 dark:bg-background-dark/75 py-5' 
         : 'bg-cream-header-90 dark:bg-background-dark/90 py-6'
     } backdrop-blur-md px-6 lg:px-20`}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <div className="flex items-center gap-12">
-          <div 
+          <Link 
+            to="/"
             className="flex items-center gap-2 group cursor-pointer"
-            onClick={() => onNavigate('home')}
           >
             <div className="w-8 h-8 text-moss-green">
               <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -41,16 +40,16 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
               </svg>
             </div>
             <h1 className="text-xl font-serif font-bold tracking-widest uppercase dark:text-white">Tvasyah</h1>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-8 uppercase text-[11px] tracking-[0.2em] font-medium text-sage dark:text-gray-400">
             {NAV_ITEMS.map((item) => (
-              <button 
+              <Link 
                 key={item.label} 
-                className={`hover:text-gold-muted transition-colors uppercase tracking-widest ${currentView === item.href ? 'text-primary font-bold' : ''}`}
-                onClick={() => onNavigate(item.href)}
+                to={`/${item.href}`}
+                className="hover:text-gold-muted transition-colors uppercase tracking-widest"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
         </div>
@@ -59,7 +58,10 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentView }) => {
             <button className="transition-all duration-200 group">
               <CircleUser className="text-sage transition-colors group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
             </button>
-            <button className="relative transition-all duration-200 group">
+            <button 
+              onClick={onCartClick}
+              className="relative transition-all duration-200 group"
+            >
               <ShoppingCart className="text-sage transition-colors group-hover:text-gold-muted" size={ICONS.SIZE.MD} />
               <span className="absolute -top-1 -right-1 bg-moss-green text-white text-[8px] rounded-full w-4 h-4 flex items-center justify-center">2</span>
             </button>
